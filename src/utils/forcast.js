@@ -11,7 +11,8 @@ const forcast = (latitude, longitude, callback) =>{
         }else{
             callback(undefined,{
                 temperature: response.body.current.temperature,
-                weather: 'forcast is: '+ response.body.current.weather_descriptions[0]
+                weather: response.body.current.weather_descriptions,
+                humidity: response.body.current.humidity
             })
         }
     })
